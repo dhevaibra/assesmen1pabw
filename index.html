@@ -51,6 +51,10 @@
           alert("buku tidak ditemukan");
           return;
         }
+
+        if (jumlahBuku > bukuDipilih.jumlah) {
+          alert(`stok buku tidak ada, hanya tersedia ${bukuDipilih.jumlah}`);
+        }
       }
     </script>
   </body>
