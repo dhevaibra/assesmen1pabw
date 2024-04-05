@@ -42,7 +42,13 @@
         const jumlahBuku = parseInt(document.getElementById("jumlah").value); //mengambil dari id
         const namaBuku = document.getElementById("namaBuku").value; //mengambil dari id
         if (!jumlahBuku) {
-          alert("jumlah buku tidak boleh kosong"); //peringatan untuk megisi jumlah buku 
+          alert("jumlah buku tidak boleh kosong"); //peringatan untuk megisi jumlah buku
+          return;
+        }
+
+        const bukuDipilih = buku.find((buku) => buku.nama === namaBuku);
+        if (!bukuDipilih) {
+          alert("buku tidak ditemukan");
           return;
         }
       }
