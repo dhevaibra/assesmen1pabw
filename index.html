@@ -11,24 +11,41 @@
     <h2>Kelas: 46-02</h2>
     <img src="15.jpg" alt="" />
 
+    <div class="form-container">
+      <label for="jumlah">Jumlah Buku:</label>
+      <input type="number" id="jumlah" />
+
+      <br />
+
+      <label for="namaBuku">Pilih Buku:</label>
+      <select id="namaBuku">
+        <option value="">Pilih buku</option>
+        <option value="sherlock">Sherlock Holmes</option>
+        <option value="lupin">Lupin III</option>
+        <option value="aladin">Aladdin</option>
+      </select>
+
+      <br />
+
+      <button onclick="ambilBuku()">Ambil Buku</button>
+    </div>
+
     <script>
-        //array buku
-        let buku = [
-      { nama: "sherlock", jumlah: 2 }, //judul buku 1
-      { nama: "lupin", jumlah: 2 }, // judul buku 2
-      { nama: "aladin", jumlah: 2 }, //judul buku 3
-    ];
+      //array buku
+      let buku = [
+        { nama: "sherlock", jumlah: 2 }, //judul buku 1
+        { nama: "lupin", jumlah: 2 }, // judul buku 2
+        { nama: "aladin", jumlah: 2 }, //judul buku 3
+      ];
 
-    function ambilBuku() {
- 
-      const jumlahBuku = parseInt(document.getElementById("jumlah").value); //mengambil dari id
-      const namaBuku = document.getElementById("namaBuku").value; //mengambil dari id
-    }
-
-
-
+      function ambilBuku() {
+        const jumlahBuku = parseInt(document.getElementById("jumlah").value); //mengambil dari id
+        const namaBuku = document.getElementById("namaBuku").value; //mengambil dari id
+        if (!jumlahBuku) {
+          alert("jumlah buku tidak boleh kosong"); //peringatan untuk megisi jumlah buku 
+          return;
+        }
+      }
     </script>
-
- 
   </body>
 </html>
